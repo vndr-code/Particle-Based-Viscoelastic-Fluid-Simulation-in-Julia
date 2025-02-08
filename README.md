@@ -10,8 +10,8 @@ This repository contains a Julia implementation of a particle-based viscoelastic
 
 This project implements a Lagrangian fluid simulation where the fluid is modeled as a set of interacting particles. Key techniques include:
 - **Double Density Relaxation:** A method to enforce incompressibility by computing two types of local densities and applying corrective displacements.
-- **Spring-Based Elasticity:** Particles are connected with springs to simulate viscoelastic behavior, with variable spring properties (e.g., stiffer at the bottom, softer at the top) to mimic the collapse of 3D printed concrete structures.
-- **Spatial Hashing:** An efficient neighbor search is implemented using spatial hashing, which is essential for scalability to 1000+ particles.
+- **Spring-Based Elasticity:** Particles are connected with springs to simulate viscoelastic behavior.
+- **Spatial Hashing:** An efficient neighbor search is implemented using spatial hashing, which is essential for scalability.
 - **Boundary Handling:** Fixed boundary collisions with sticky response to prevent particles from leaving the simulation domain.
 
 ## Project Structure
@@ -35,7 +35,7 @@ This project implements a Lagrangian fluid simulation where the fluid is modeled
   Implements the main simulation update function following a prediction-relaxation scheme. This file applies gravity, viscosity, spring forces, double density relaxation, and boundary corrections. Finally, velocities are updated based on the displacement.
 
 - **Visualize.jl**  
-  Provides functions for visualizing the particles (and optionally, springs) using Plots.jl.
+  Provides functions for visualizing the particles using Plots.jl.
 
 - **Main.jl**  
   The main entry point for the simulation. It sets up the environment, instantiates particles (in this example, 100 particles with random positions), initializes springs and the spatial hash, and then runs the simulation for 500 frames to generate a GIF.
